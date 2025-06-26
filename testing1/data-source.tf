@@ -4,7 +4,7 @@ data "aws_vpc" "data-source" {
 
 
 resource "aws_internet_gateway" "data-igw" {
-  vpc_id = aws_vpc.data-source.id
+  vpc_id = data.aws_vpc.data-source.id
 
   tags = {
     Name = "data-igw"
