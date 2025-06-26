@@ -14,3 +14,11 @@ resource "aws_instance" "web-1" {
     CostCenter = "ABCD"
   }
 }
+
+terraform {
+  backend "s3" {
+    bucket = "mybucket12456mybucket12456"
+    key    = "ec2-infra.tfstate"
+    region = "us-east-1"
+  }
+}
