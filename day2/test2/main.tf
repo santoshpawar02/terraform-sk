@@ -104,7 +104,7 @@ resource "aws_instance" "web-1" {
 
 
 
-resource "aws_s3_bucket" "var.bucket" {
+resource "aws_s3_bucket" "example" {
   bucket = "var.bucket"
 
   tags = {
