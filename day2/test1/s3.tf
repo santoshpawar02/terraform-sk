@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "my-tf-test-bucket12457882" {
     Name        = "My bucket"
     Environment = "Dev"
   }
-  depends_on = [aws_route_table_association.public]
+  depends_on = [aws_s3_bucket.my-tf-test-bucket12457881]
 }
 
 resource "aws_s3_bucket" "my-tf-test-bucket12457883" {
