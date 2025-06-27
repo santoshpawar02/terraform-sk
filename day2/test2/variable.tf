@@ -10,3 +10,4 @@ variable "rt_tag" {}
 variable "ec2_az" {}
 variable "ec2_type" {}
 #variable "key_name" {}
+variable "bucket" {}

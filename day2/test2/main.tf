@@ -101,3 +101,15 @@ resource "aws_instance" "web-1" {
     CostCenter = "ABCD"
   }
 }
+
+
+
+resource "aws_s3_bucket" "my-tf-test-bucket12457881" {
+  bucket = "var.bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+
