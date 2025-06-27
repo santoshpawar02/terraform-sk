@@ -9,4 +9,4 @@ variable "rt_cidr_block" {}
 variable "rt_tag" {}
 variable "ec2_az" {}
 variable "ec2_type" {}
-variable "key_name" {}
+#variable "key_name" {}
