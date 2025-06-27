@@ -12,4 +12,8 @@ resource "aws_instance" "web-1" {
     Owner      = "sai"
     CostCenter = "ABCD"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
