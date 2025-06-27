@@ -104,11 +104,11 @@ resource "aws_instance" "web-1" {
 
 
 
-resource "aws_s3_bucket" "my-tf-bucket1245748112457481" {
+resource "aws_s3_bucket" "var.bucket" {
   bucket = "var.bucket"
 
   tags = {
-    Name        = "My bucket"
+    Name        = "var.bucket"
     Environment = "Dev"
   }
 }
