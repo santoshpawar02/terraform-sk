@@ -12,6 +12,7 @@ resource "aws_s3_bucket" "my-tf-test-bucket12457881" {
     Name        = "My bucket"
     Environment = "Dev"
   }
+  depends_on = [s3]
 }
 
 terraform {
@@ -20,6 +21,7 @@ terraform {
     key    = "worksapce.tfstate"
     region = "us-east-1"
   }
+
 }
 
 
