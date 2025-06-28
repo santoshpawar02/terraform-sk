@@ -5,6 +5,24 @@ provider "aws" {
   region = var.aws_region
 }
 
+resource "aws_s3_bucket" "my-tf-test-bucket12457881" {
+  bucket = "my-tf-test-bucket12457881"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+
+terraform {
+  backend "s3" {
+    bucket = "my-tf-test-bucket12457881"
+    key    = "worksapce.tfstate"
+    region = "us-east-1"
+  }
+}
+
+
 resource "aws_vpc" "default" {
   cidr_block           = var.vpc_cidr
   enable_dns_hostnames = true
@@ -91,14 +109,7 @@ resource "aws_security_group" "allow_all" {
   }
 }
 
-resource "aws_s3_bucket" "my-tf-test-bucket12457881" {
-  bucket = "my-tf-test-bucket12457881"
 
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-}
 
 # data "aws_ami" "my_ami" {
 #   most_recent = true
