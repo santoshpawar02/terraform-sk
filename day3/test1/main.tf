@@ -91,6 +91,15 @@ resource "aws_security_group" "allow_all" {
   }
 }
 
+resource "aws_s3_bucket" "my-tf-test-bucket12457881" {
+  bucket = "my-tf-test-bucket12457881"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+
 # data "aws_ami" "my_ami" {
 #   most_recent = true
 #   #name_regex       = "^sai"
