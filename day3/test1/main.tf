@@ -5,16 +5,6 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_s3_bucket" "my-tf-test-bucket12457881" {
-  bucket = "my-tf-test-bucket12457881"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-  depends_on = [s3]
-}
-
 terraform {
   backend "s3" {
     bucket = "my-tf-test-bucket12457881"
