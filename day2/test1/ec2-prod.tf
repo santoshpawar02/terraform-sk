@@ -14,6 +14,6 @@ resource "aws_instance" "web-1" {
   }
 
   lifecycle {
-    create_before_destroy = false
+    create_before_destroy = true
   }
 }
