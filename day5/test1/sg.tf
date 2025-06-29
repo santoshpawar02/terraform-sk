@@ -3,12 +3,11 @@ resource "aws_security_group" "allow_all" {
   description = "Allow all inbound"
   vpc_id      = aws_vpc.default.id
 
-
   dynamic "ingress" {
     for_each = var.ingress_value
     content {
-      from_port   = ingress_value
-      to_port     = ingress_value
+      from_port   = ingress.value # CORRECTED: Use ingress.value
+      to_port     = ingress.value # CORRECTED: Use ingress.value
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
@@ -24,7 +23,6 @@ resource "aws_security_group" "allow_all" {
     Owner       = local.Owner
     CostCenter  = local.CostCenter
     Team        = local.Team
-    environment = "var.environment"
+    environment = local.environment
   }
-
 }
