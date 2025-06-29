@@ -71,27 +71,6 @@ resource "aws_route_table" "private_route_table" {
 #   route_table_id = aws_route_table.terraform-public.id
 # }
 
-resource "aws_security_group" "allow_all" {
-  name        = "allow_all"
-  description = "Allow all inbound traffic"
-  vpc_id      = aws_vpc.default.id
-
-  ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-
 
 # data "aws_ami" "my_ami" {
 #   most_recent = true
