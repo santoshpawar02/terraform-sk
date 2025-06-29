@@ -5,10 +5,10 @@ resource "aws_security_group" "allow_all" {
 
 
   dynamic "ingress" {
-    for_each = var.ingress.value
+    for_each = var.ingress_value
     content {
-      from_port   = ingress.value
-      to_port     = ingress.value
+      from_port   = var.ingress_value
+      to_port     = var.ingress_value
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
