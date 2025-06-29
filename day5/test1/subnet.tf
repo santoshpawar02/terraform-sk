@@ -5,7 +5,7 @@ resource "aws_subnet" "public-subnet" {
   availability_zone = element(var.azs, count.index)
 
   tags = {
-    Name        = "${var.vpc_name}-publick-subnet-$(count.index+1)"
+    Name        = "${var.vpc_name}-publick-subnet-${count.index + 1}"
     Owner       = local.Owner
     CostCenter  = local.CostCenter
     Team        = local.Team
@@ -21,7 +21,7 @@ resource "aws_subnet" "private_subnet" {
   availability_zone = element(var.azs, count.index)
 
   tags = {
-    Name        = "${var.vpc_name}-private-subnet-$(count.index+1)"
+    Name        = "${var.vpc_name}-private-subnet-${count.index + 1}"
     Owner       = local.Owner
     CostCenter  = local.CostCenter
     Team        = local.Team
