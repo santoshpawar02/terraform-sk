@@ -12,7 +12,6 @@ terraform {
     region         = "us-east-1"
     dynamodb_table = "dynamodb-state-locking"
   }
-
 }
 
 
@@ -21,7 +20,7 @@ resource "aws_vpc" "default" {
   enable_dns_hostnames = true
   tags = {
     Name  = "${var.vpc_name}"
-    Owner = "Saikiran"
+    Owner = "Santosh"
   }
 }
 
