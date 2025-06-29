@@ -1,6 +1,8 @@
 
 locals {
-  Owner      = "Dev-Team"
-  CostCenter = "Mum21"
-  Team       = "sd"
+  Owner       = "Dev-Team"
+  CostCenter  = local.CostCenter
+  Team        = local.Team
+  environment = "var.environment"
+
 }
