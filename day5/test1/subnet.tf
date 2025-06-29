@@ -14,7 +14,7 @@ resource "aws_subnet" "public-subnet" {
 }
 
 
-resource "aws_subnet" "private_subnet" {
+resource "aws_subnet" "private-subnet" {
   count             = 3 #starts from 0-2
   vpc_id            = aws_vpc.default.id
   cidr_block        = element(var.private_cidr_block, count.index + 1)
