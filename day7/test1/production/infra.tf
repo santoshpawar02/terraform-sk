@@ -8,3 +8,13 @@ module "prod_vpc_1" {
   private_cird_block = ["192.168.10.0/24", "192.168.20.0/24", "192.168.30.0/24"]
   azs                = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
+
+
+module "prod_sg_1" {
+  source   = "../modules/sg"
+  vpc_id   = module.prod_vpc_1.vpc_id
+  vpc_name = module.prod_vpc_1.vpc_name
+  #  vpc_id             = "aws_vpc.default.id"
+  environment   = module.dev_vpc_1.environment
+  ingress_value = ["80", "8080", "443", "8443", "22", "3306", "1900", "1443"]
+}
