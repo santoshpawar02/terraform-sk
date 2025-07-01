@@ -1,3 +1,12 @@
+sudo fdisk /dev/xvda
+sudo pvcreate /dev/xvda5
+sudo vgs
+sudo vgextend RootVG /dev/xvda5
+sudo vgs
+sudo lvextend -L +9G /dev/RootVG/homeVol
+sudo xfs_growfs /dev/RootVG/homeVol
+sudo df -h
+
 sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 sudo yum -y install terraform
