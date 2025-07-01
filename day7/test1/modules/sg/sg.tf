@@ -2,7 +2,6 @@ resource "aws_security_group" "allow_all" {
   name        = "${var.vpc_name}-allow-all"
   description = "Allow all Inbound traffic"
   #  vpc_id      = aws_vpc.default.id
-  vpc_id = module.dev_vpc_1.vpc_name
   # Ingress rule block with dynamic iteration over service_ports
   dynamic "ingress" {
     for_each = var.ingress_value
