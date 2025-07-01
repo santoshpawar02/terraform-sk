@@ -5,7 +5,7 @@ resource "aws_instance" "public-server" {
   instance_type               = "t2.micro"
   key_name                    = var.key_name
   subnet_id                   = element(var.public_subnets.*.id, count.index + 1)
-  vpc_security_group_ids      = [avr.sg_id]
+  vpc_security_group_ids      = [var.sg_id]
   associate_public_ip_address = true
   tags = {
     Name        = "${var.vpc_name}-Public-Server-${count.index + 1}"
