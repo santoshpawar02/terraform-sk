@@ -1,4 +1,5 @@
 resource "null_resource" "cluster" {
+  count = var.environment == "prod" ? 3 : 1
   provisioner "file" {
     source      = "user-data.sh"
     destination = "/tmp/user-data.sh"
