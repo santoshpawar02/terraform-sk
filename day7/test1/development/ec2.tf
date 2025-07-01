@@ -7,7 +7,7 @@ module "dev_ec2_1" {
   aws_region      = var.aws_region
   public_subnets  = module.dev_vpc_1.public-subnet.id
   private_subnets = module.dev_vpc_1.private-subnet.id
-  sg_id           = module.dev_sq_1.id
+  sg_id           = module.dev_sg_1
   vpc_name        = module.dev_vpc_1.vpc_name
   key_name        = "secops-key"
 }
